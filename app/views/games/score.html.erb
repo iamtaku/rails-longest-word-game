@@ -1,0 +1,13 @@
+<h1>Result</h1>
+<p id="result">
+  <% if @grid_ok && @word_ok %>
+    <p><strong>Congratulations!</strong><%= @attempt %> is a valid word!</p>
+  <% elsif !@grid_ok %>
+    <p>Sorry but <strong><%= @attempt %> </strong>can't be build out of <%= @grid.chars.join(', ') %></p>
+  <% else %>
+    <p>Sorry but <strong><%= @attempt %> </strong>does not seem to be a valid word</p>
+  <% end %>
+
+
+</p>
+<%= link_to 'Try again', new_path %>
